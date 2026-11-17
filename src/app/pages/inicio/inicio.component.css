@@ -1,0 +1,8 @@
+.bienvenida { background: linear-gradient(135deg, var(--primario), #ea580c); color: #fff; border-radius: 16px; padding: 1.6rem; margin-bottom: 1.5rem; }
+.bienvenida h2 { margin: 0 0 0.4rem; }
+.bienvenida p { margin: 0; opacity: 0.95; }
+.kpi { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.2rem; transition: transform 0.15s; }
+.kpi:hover { transform: translateY(-3px); }
+.icono { font-size: 1.8rem; }
+.valor { font-size: 2rem; font-weight: 700; color: var(--primario); }
+.titulo { color: #6b5b4b; font-size: 0.9rem; }

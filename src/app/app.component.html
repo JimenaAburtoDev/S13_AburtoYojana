@@ -1,0 +1,23 @@
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo">🌶️ {{ nombre }}</div>
+    <nav>
+      @for (item of menu; track item.ruta) {
+        <a [routerLink]="item.ruta" routerLinkActive="activo">
+          <span>{{ item.icono }}</span> {{ item.texto }}
+        </a>
+      }
+    </nav>
+    <small class="pie">Dashboard de Restaurante · S13 AP7</small>
+  </aside>
+
+  <div class="contenido">
+    <header class="encabezado">
+      <h1>Panel de Gestión · {{ nombre }}</h1>
+      <span class="usuario">👤 Administrador</span>
+    </header>
+    <main class="principal">
+      <router-outlet />
+    </main>
+  </div>
+</div>

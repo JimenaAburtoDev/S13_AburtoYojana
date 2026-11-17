@@ -1,0 +1,12 @@
+<h2 class="titulo-vista">🪑 Mesas</h2>
+<p class="subtitulo">Estado actual del salón.</p>
+
+<div class="grid">
+  @for (m of datos.mesas; track m.id) {
+    <div class="tarjeta">
+      <h3>Mesa {{ m.numero }}</h3>
+      <p>Capacidad: {{ m.capacidad }} personas</p>
+      <span [class]="'etiqueta ' + clase(m.estado)">{{ m.estado }}</span>
+    </div>
+  }
+</div>

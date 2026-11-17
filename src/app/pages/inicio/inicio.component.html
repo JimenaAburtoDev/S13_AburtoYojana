@@ -1,0 +1,14 @@
+<section class="bienvenida">
+  <h2>¡Bienvenido a Sabor Andino! 👋</h2>
+  <p>Resumen del servicio de hoy. Selecciona una tarjeta o usa el menú para gestionar el restaurante.</p>
+</section>
+
+<div class="grid">
+  @for (k of kpis; track k.titulo) {
+    <a class="tarjeta kpi" [routerLink]="k.ruta">
+      <span class="icono">{{ k.icono }}</span>
+      <span class="valor">{{ k.valor }}</span>
+      <span class="titulo">{{ k.titulo }}</span>
+    </a>
+  }
+</div>

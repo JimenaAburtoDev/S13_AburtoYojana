@@ -1,0 +1,25 @@
+<h2 class="titulo-vista">🍽️ Platos</h2>
+<p class="subtitulo">Carta del restaurante con precios y disponibilidad.</p>
+
+<div class="tabla-wrap">
+  <table class="tabla">
+    <thead>
+      <tr><th>Plato</th><th>Categoría</th><th>Descripción</th><th>Precio</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      @for (p of datos.platos; track p.id) {
+        <tr>
+          <td><strong>{{ p.nombre }}</strong></td>
+          <td>{{ datos.nombreCategoria(p.categoriaId) }}</td>
+          <td>{{ p.descripcion }}</td>
+          <td>{{ p.precio | currency: 'S/ ' }}</td>
+          <td>
+            <span class="etiqueta" [class.verde]="p.disponible" [class.rojo]="!p.disponible">
+              {{ p.disponible ? 'Disponible' : 'Agotado' }}
+            </span>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

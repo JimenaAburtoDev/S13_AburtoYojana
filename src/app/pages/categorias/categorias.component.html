@@ -1,0 +1,13 @@
+<h2 class="titulo-vista">🗂️ Categorías</h2>
+<p class="subtitulo">Organización de la carta por tipo de plato.</p>
+
+<div class="grid">
+  @for (c of datos.categorias; track c.id) {
+    <div class="tarjeta">
+      <div style="font-size: 2rem">{{ c.icono }}</div>
+      <h3>{{ c.nombre }}</h3>
+      <p>{{ c.descripcion }}</p>
+      <span class="etiqueta amarillo">{{ datos.platosPorCategoria(c.id) }} platos</span>
+    </div>
+  }
+</div>

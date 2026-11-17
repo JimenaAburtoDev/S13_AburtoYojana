@@ -1,0 +1,22 @@
+<h2 class="titulo-vista">🧾 Pedidos</h2>
+<p class="subtitulo">Pedidos registrados durante el servicio.</p>
+
+<div class="tabla-wrap">
+  <table class="tabla">
+    <thead>
+      <tr><th>N°</th><th>Mesa</th><th>Platos</th><th>Hora</th><th>Total</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      @for (p of datos.pedidos; track p.id) {
+        <tr>
+          <td>#{{ p.id }}</td>
+          <td>Mesa {{ p.mesaNumero }}</td>
+          <td>{{ p.platos.join(', ') }}</td>
+          <td>{{ p.hora }}</td>
+          <td>{{ p.total | currency: 'S/ ' }}</td>
+          <td><span [class]="'etiqueta ' + clase(p.estado)">{{ p.estado }}</span></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
