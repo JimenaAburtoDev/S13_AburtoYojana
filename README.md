@@ -1,4 +1,4 @@
-# S13_AburtoYojana · Dashboard Sabor Andino
+# S13_AburtoYojana · Dashboard Sabor Andino (S14 | AP8: Autenticación y Login)
 
 Dashboard de gestión para un restaurante, desarrollado con **Angular** y **Angular Router** como Actividad Práctica Evaluada (S13 | AP7 | Control).
 
@@ -54,3 +54,17 @@ src/
         └── no-encontrado/
 ```
 
+
+## S14 | AP8 · Autenticación y Login
+
+Sobre el mismo proyecto de S13 agregué un sistema de inicio de sesión.
+
+- **Login** (`/login`): correo y contraseña con validación y mensajes de error visibles.
+- **AuthService** (`services/auth.service.ts`): valida credenciales de prueba, inicia/cierra sesión y comprueba si hay sesión activa.
+- **Sesión con localStorage**: se guarda al ingresar, se lee al recargar y se borra al cerrar sesión.
+- **Guards** (`guards/auth.guard.ts`): `authGuard` protege las 5 vistas y redirige a `/login`; `loginGuard` evita volver al login con sesión activa.
+- **Logout**: botón "Cerrar sesión" en el encabezado del Dashboard.
+
+**Credenciales de prueba:** `admin@saborandino.com` / `123456`
+
+Nuevos archivos: `pages/login/`, `services/auth.service.ts`, `guards/auth.guard.ts`. Modificados: `app.routes.ts`, `app.component.*`.

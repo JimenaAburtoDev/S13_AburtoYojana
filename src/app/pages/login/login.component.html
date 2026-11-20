@@ -1,0 +1,40 @@
+<div class="fondo">
+  <form class="caja" (submit)="ingresar($event)" novalidate>
+    <div class="marca">🌶️ Sabor Andino</div>
+    <h2>Iniciar Sesión</h2>
+    <p class="sub">Accede al panel de gestión del restaurante.</p>
+
+    @if (errorCredenciales()) {
+      <div class="alerta" role="alert">Correo o contraseña incorrectos. Inténtalo nuevamente.</div>
+    }
+
+    <label for="correo">Correo electrónico</label>
+    <input
+      id="correo" type="email" placeholder="usuario@ejemplo.com" autocomplete="username"
+      [value]="correo()" (input)="correo.set($any($event.target).value)"
+      [class.invalido]="intentado() && errorCorreo"
+    />
+    @if (intentado() && errorCorreo) {
+      <small class="error">{{ errorCorreo }}</small>
+    }
+
+    <label for="clave">Contraseña</label>
+    <div class="campo-clave">
+      <input
+        id="clave" [type]="verClave() ? 'text' : 'password'" placeholder="••••••••" autocomplete="current-password"
+        [value]="clave()" (input)="clave.set($any($event.target).value)"
+        [class.invalido]="intentado() && errorClave"
+      />
+      <button type="button" class="ojo" (click)="verClave.set(!verClave())" [attr.aria-label]="verClave() ? 'Ocultar contraseña' : 'Mostrar contraseña'">
+        {{ verClave() ? '🙈' : '👁️' }}
+      </button>
+    </div>
+    @if (intentado() && errorClave) {
+      <small class="error">{{ errorClave }}</small>
+    }
+
+    <button type="submit" class="ingresar">Ingresar</button>
+
+    <p class="demo">Credenciales de prueba:<br /><strong>admin&#64;saborandino.com</strong> · <strong>123456</strong></p>
+  </form>
+</div>

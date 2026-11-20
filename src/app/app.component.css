@@ -30,3 +30,10 @@ nav a.activo { background: var(--primario); color: #fff; font-weight: 600; }
   nav { flex-direction: row; flex-wrap: wrap; }
   .pie { display: none; }
 }
+
+.acciones { display: flex; align-items: center; gap: 1rem; }
+.logout {
+  background: var(--primario); color: #fff; border: none; border-radius: 10px;
+  padding: 0.5rem 0.9rem; font-weight: 600; cursor: pointer; transition: filter 0.2s;
+}
+.logout:hover { filter: brightness(1.1); }

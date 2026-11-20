@@ -1,3 +1,4 @@
+@if (auth.usuarioActual(); as usuario) {
 <div class="layout">
   <aside class="sidebar">
     <div class="logo">🌶️ {{ nombre }}</div>
@@ -14,10 +15,16 @@
   <div class="contenido">
     <header class="encabezado">
       <h1>Panel de Gestión · {{ nombre }}</h1>
-      <span class="usuario">👤 Administrador</span>
+      <div class="acciones">
+        <span class="usuario">👤 {{ usuario.nombre }}</span>
+        <button type="button" class="logout" (click)="cerrarSesion()">🚪 Cerrar sesión</button>
+      </div>
     </header>
     <main class="principal">
       <router-outlet />
     </main>
   </div>
 </div>
+} @else {
+  <router-outlet />
+}

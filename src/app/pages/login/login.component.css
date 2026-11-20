@@ -1,0 +1,28 @@
+.fondo {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  background: linear-gradient(135deg, var(--oscuro), #7c2d12);
+}
+.caja {
+  width: 100%; max-width: 400px; background: #fff; border-radius: 16px; padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column;
+}
+.marca { font-size: 1.3rem; font-weight: 700; color: var(--primario); margin-bottom: 0.8rem; }
+h2 { margin: 0; color: var(--oscuro); }
+.sub { margin: 0.2rem 0 1.2rem; color: #6b5b4b; }
+label { font-weight: 600; margin: 0.8rem 0 0.3rem; color: var(--oscuro); font-size: 0.9rem; }
+input {
+  width: 100%; padding: 0.7rem 0.8rem; border: 1px solid #d9c9b4; border-radius: 10px; font-size: 1rem; background: #fffdf9;
+}
+input:focus { outline: 2px solid var(--acento); border-color: var(--primario); }
+input.invalido { border-color: #dc2626; background: #fef2f2; }
+.campo-clave { position: relative; }
+.campo-clave input { padding-right: 2.8rem; }
+.ojo { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.1rem; }
+.error { color: #b91c1c; margin-top: 0.3rem; }
+.alerta { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 0.9rem; }
+.ingresar {
+  margin-top: 1.4rem; padding: 0.8rem; border: none; border-radius: 10px; background: var(--primario);
+  color: #fff; font-weight: 700; font-size: 1rem; cursor: pointer; transition: filter 0.2s;
+}
+.ingresar:hover { filter: brightness(1.1); }
+.demo { margin: 1.2rem 0 0; font-size: 0.8rem; color: #8a7966; text-align: center; }

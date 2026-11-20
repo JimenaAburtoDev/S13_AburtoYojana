@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  auth = inject(AuthService);
+  private router = inject(Router);
+
   nombre = 'Sabor Andino';
   menu = [
     { ruta: '/inicio', texto: 'Inicio', icono: '🏠' },
@@ -17,4 +21,9 @@ export class AppComponent {
     { ruta: '/mesas', texto: 'Mesas', icono: '🪑' },
     { ruta: '/pedidos', texto: 'Pedidos', icono: '🧾' },
   ];
+
+  cerrarSesion(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
 }
